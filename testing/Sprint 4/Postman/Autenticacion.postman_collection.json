@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "c6d2865a-d650-4690-9f9e-cf4b23156217",
+		"name": "Autenticacion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23526164"
+	},
+	"item": [
+		{
+			"name": "PostAutenticacion",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"sebamasero@gmail.com\",\r\n    \"password\":\"sebamasero\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "13.59.110.188:8090/autenticar/login",
+					"host": [
+						"13",
+						"59",
+						"110",
+						"188"
+					],
+					"port": "8090",
+					"path": [
+						"autenticar",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "306b3907-98e4-4b42-82cc-f8f2b56302f0",
+		"name": "Reservas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23526164"
+	},
+	"item": [
+		{
+			"name": "PostReservas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"post all categorias test\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"contenido json\",function(){\r",
+							"    pm.expect(pm.response.json().id).to.equal(2)\r",
+							"    pm.expect(pm.response.json().hora_comienzo).to.equal(\"15:30:00\")\r",
+							"    pm.expect(pm.response.json().checkIn).to.equal(\"2023-05-05\")\r",
+							"    pm.expect(pm.response.json().checkOut).to.equal(\"2023-05-06\")\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":2,\r\n    \"hora_comienzo\":\"15:30:00\",\r\n    \"checkIn\":\"2023-05-05\",\r\n    \"checkOut\":\"2023-05-06\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "13.59.110.188:8090/reservas",
+					"host": [
+						"13",
+						"59",
+						"110",
+						"188"
+					],
+					"port": "8090",
+					"path": [
+						"reservas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetReservas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"post all categorias test\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"contenido json\",function(){\r",
+							"    pm.expect(pm.response.json()[0].id).to.equal(2)\r",
+							"    pm.expect(pm.response.json()[0].hora_comienzo).to.equal(\"15:30:00\")\r",
+							"    pm.expect(pm.response.json()[0].checkIn).to.equal(\"2023-05-05\")\r",
+							"    pm.expect(pm.response.json()[0].checkOut).to.equal(\"2023-05-05\")\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "13.59.110.188:8090/reservas",
+					"host": [
+						"13",
+						"59",
+						"110",
+						"188"
+					],
+					"port": "8090",
+					"path": [
+						"reservas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteReservas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"post all categorias test\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "13.59.110.188:8090/reservas/eliminar/6",
+					"host": [
+						"13",
+						"59",
+						"110",
+						"188"
+					],
+					"port": "8090",
+					"path": [
+						"reservas",
+						"eliminar",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutReservas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"post all categorias test\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":2,\r\n    \"hora_comienzo\":\"15:30\",\r\n    \"checkIn\":\"2023-05-05\",\r\n    \"checkOut\":\"2023-05-05\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "13.59.110.188:8090/reservas",
+					"host": [
+						"13",
+						"59",
+						"110",
+						"188"
+					],
+					"port": "8090",
+					"path": [
+						"reservas"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "4ee21946-a568-472f-8632-74654d03f1da",
+		"name": "Usuarios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23526164"
+	},
+	"item": [
+		{
+			"name": "PostUsuarios",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"post all categorias test\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":2,\r\n    \"nombre\":\"Joaquin\",\r\n    \"apellido\":\"Stechina\",\r\n    \"email\":\"asdf@gmail.com\",\r\n    \"contrasena\":\"abcd1234\",\r\n    \"ciudad\":\"Avellaneda\",\r\n    \"jwt\":\"123456abcdefg\",\r\n    \"rol\":{\r\n        \"id\":1,\r\n        \"nombre\":\"Joaquin\"\r\n    },\r\n    \"reservas\":3\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "13.59.110.188:8090/usuarios",
+					"host": [
+						"13",
+						"59",
+						"110",
+						"188"
+					],
+					"port": "8090",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUsuarios",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"post all categorias test\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "13.59.110.188:8090/usuarios/5",
+					"host": [
+						"13",
+						"59",
+						"110",
+						"188"
+					],
+					"port": "8090",
+					"path": [
+						"usuarios",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUsuarios",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"post all categorias test\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "13.59.110.188:8090/usuarios/eliminar/4",
+					"host": [
+						"13",
+						"59",
+						"110",
+						"188"
+					],
+					"port": "8090",
+					"path": [
+						"usuarios",
+						"eliminar",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutUsuarios",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"post all categorias test\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":5,\r\n    \"nombre\":\"Joaquin\",\r\n    \"apellido\":\"Stechina\",\r\n    \"email\":\"asdf@gmail.com\",\r\n    \"contrasena\":\"abcd1234\",\r\n    \"ciudad\":\"Avellaneda\",\r\n    \"jwt\":\"123456abcdefg\",\r\n    \"rol\":{\r\n        \"id\":1,\r\n        \"nombre\":\"Joaquin\"\r\n    },\r\n    \"reservas\":3\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "13.59.110.188:8090/usuarios",
+					"host": [
+						"13",
+						"59",
+						"110",
+						"188"
+					],
+					"port": "8090",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

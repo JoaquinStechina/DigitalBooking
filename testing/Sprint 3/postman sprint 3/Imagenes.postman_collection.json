@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "96324aa8-17d9-4586-93ec-c51fa02efca6",
+		"name": "Imagenes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23526164"
+	},
+	"item": [
+		{
+			"name": "PostImagenes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"post all categorias test\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"contenido json\",function(){\r",
+							"    pm.expect(pm.response.json().id).to.equal(3)\r",
+							"    pm.expect(pm.response.json().titulo).to.equal(\"--\")\r",
+							"    pm.expect(pm.response.json().url).to.equal(\"--\")\r",
+							"    \r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":3,\r\n    \"titulo\":\"--\",\r\n   \"url\":\"--\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "13.59.110.188:8090/imagenes",
+					"host": [
+						"13",
+						"59",
+						"110",
+						"188"
+					],
+					"port": "8090",
+					"path": [
+						"imagenes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetImagenes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"post all categorias test\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"contenido json\",function(){\r",
+							"    pm.expect(pm.response.json()[0].id).to.equal(1)\r",
+							"    pm.expect(pm.response.json()[0].titulo).to.equal(\"balcon1\")\r",
+							"    pm.expect(pm.response.json()[0].url).to.equal(\"https://bucket-img-equipo-6.s3.us-east-2.amazonaws.com/img/hotel/balcon1.jpg\")\r",
+							"    \r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "13.59.110.188:8090/imagenes",
+					"host": [
+						"13",
+						"59",
+						"110",
+						"188"
+					],
+					"port": "8090",
+					"path": [
+						"imagenes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteImagenes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"post all categorias test\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "13.59.110.188:8090/imagenes/eliminar/3",
+					"host": [
+						"13",
+						"59",
+						"110",
+						"188"
+					],
+					"port": "8090",
+					"path": [
+						"imagenes",
+						"eliminar",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutImagenes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"post all categorias test\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":3,\r\n    \"titulo\":\"--\",\r\n   \"url\":\"--\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "13.59.110.188:8090/imagenes",
+					"host": [
+						"13",
+						"59",
+						"110",
+						"188"
+					],
+					"port": "8090",
+					"path": [
+						"imagenes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

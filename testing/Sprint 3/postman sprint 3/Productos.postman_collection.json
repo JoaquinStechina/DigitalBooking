@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "a52388a2-08a8-4370-ac0d-cbccbba2ff27",
+		"name": "Productos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23526164"
+	},
+	"item": [
+		{
+			"name": "PostProductos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"post all categorias test\",function(){\r",
+							"    pm.response.to.have.status(201);\r",
+							"})\r",
+							"\r",
+							"/*pm.test(\"contenido json\",function(){\r",
+							"    console.log(jsonData[0])\r",
+							"    pm.expect(pm.response.json()[0].id).to.equal(5)\r",
+							"    pm.expect(pm.response.json()[0].nombre).to.equal(\"seba\")\r",
+							"    pm.expect(pm.response.json()[0].titulo).to.equal(\"--\")\r",
+							"    pm.expect(pm.response.json()[0].descripcion).to.equal(\"--\")\r",
+							"    pm.expect(pm.response.json()[0].direccion).to.equal(\"--\")\r",
+							"    pm.expect(pm.response.json()[0].numeroHabitacion).to.equal(2)\r",
+							"\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].imagenes[0].id).to.equal(3)\r",
+							"    pm.expect(jsonData[0].reservas[0].id).to.equal(2)\r",
+							"    pm.expect(jsonData[0].caracteristicas[0].id).to.equal(2)\r",
+							"    pm.expect(jsonData[0].ciudad.id).to.equal(2)\r",
+							"    pm.expect(jsonData[0].categoria.id).to.equal(2)\r",
+							"})*/\r",
+							"    "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n    \"id\":5,\r\n    \"nombre\":\"seba\",\r\n    \"titulo\":\"--\",\r\n    \"descripcion\":\"--\",\r\n    \"direccion\":\"--\",\r\n    \"numeroHabitacion\":2,\r\n    \"imagenes\":[{\r\n        \"id\":3\r\n    }],\r\n    \"reservas\":[{\r\n        \"id\":6\r\n    }],\r\n    \"caracteristicas\":[{\r\n        \"id\":2\r\n    }],\r\n    \"ciudad\":{\r\n        \"id\":2\r\n    },\r\n    \"categoria\":{\r\n        \"id\":3\r\n    }\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "13.59.110.188:8090/productos",
+					"host": [
+						"13",
+						"59",
+						"110",
+						"188"
+					],
+					"port": "8090",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProductos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"post all categorias test\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "13.59.110.188:8090/productos",
+					"host": [
+						"13",
+						"59",
+						"110",
+						"188"
+					],
+					"port": "8090",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteProductos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"post all categorias test\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "pass",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "13.59.110.188:8090/productos/eliminar/1",
+					"host": [
+						"13",
+						"59",
+						"110",
+						"188"
+					],
+					"port": "8090",
+					"path": [
+						"productos",
+						"eliminar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutProductos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"post all categorias test\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":2,\r\n    \"nombre\":\"--\",\r\n    \"titulo\":\"--\",\r\n    \"descripcion\":\"--\",\r\n    \"direccion\":\"--\",\r\n    \"numeroHabitacion\":2,\r\n    \"caracteristicas\":[{\r\n        \"id\":2\r\n    }],\r\n    \"ciudad\":{\r\n        \"id\":2\r\n    },\r\n    \"categoria\":{\r\n        \"id\":3\r\n    }\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "13.59.110.188:8090/productos",
+					"host": [
+						"13",
+						"59",
+						"110",
+						"188"
+					],
+					"port": "8090",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
